@@ -11,6 +11,16 @@ def get_all_files(directory, skipext=None):
 
     return file_list
 
+def get_all_files_containing(directory, containing):
+    """Returns the absolute path to all files in that have containgin in filename"""
+    file_list = []
+    for _file in os.listdir(directory):
+        if containing in file:
+            full_path = os.path.join(directory, _file)
+            file_list.append(full_path)
+
+    return file_list
+
 def split_lists(list_of_lists, train_ratio, val_ratio, test_ratio):
     """Splits all the lists into the ratios.
 
