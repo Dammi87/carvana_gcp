@@ -2,13 +2,12 @@ import tensorflow as tf
 import src.tfrecord.common as common
 from src.lib import fileops, imgops, listops
 import os
-import math.ceil as ceil
+from math import ceil
 
-def _get_img_img_example(self, feature_path, label_path):
+def _get_img_img_example(feature_path, label_path):
     """Create the feature/label pair tf example"""
-
-    ftr = imgops.load_image(i_ftr)
-    lbl = imgops.load_image(i_lbl)
+    ftr = imgops.load_image(feature_path)
+    lbl = imgops.load_image(label_path)
     feature = {
         'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring())),
         'feature/height': common._int64_feature(ftr.shape[0]),
@@ -20,7 +19,7 @@ def _get_img_img_example(self, feature_path, label_path):
         'label/channels': common._int64_feature(lbl.shape[2])
         }
     
-    return
+    return tf.train.Example(features=tf.train.Features(feature=feature))
 
 class ImgImgParser():
     def __init__(self, feature_folder, label_folder, split=[0.8, 0.1, 0.1]):
@@ -41,6 +40,9 @@ class ImgImgParser():
 
         # Get the data split
         split = fileops.split_lists([feature_path, label_path], *self._split)
+        print(len(split))
+        print(len(split[0]))
+        print(len(split[0][0]))
         split_names = ['train', 'val', 'test']
 
         # Try to split up the "shards" between the dataset splits
@@ -57,11 +59,10 @@ class ImgImgParser():
 
         # Loop through
         for _name, (feature_paths, label_paths), _n_shard in zip(split_names, split, n_shards):
-
             # Create the tfrecord name for each shard
-            tf_names = [os.path.join(output_path, '%s_shard_%d.tfrecords' % (_name, i)) for i in range(_n_shard)]:
-
-            for shard_ftr, shard_lbl in zip(shard(feature_paths), shard(label_paths)):
-                common.convert_img_img(tf_names, shard_ftr, shard_lbl, _get_img_img_example)
+            tf_names = [os.path.join(output_path, '%s_shard_%d.tfrecords' % (_name, i)) for i in range(_n_shard)]
+            sharded_features = listops.chunks(feature_paths, _n_shard)
+            sharded_labels = listops.chunks(label_paths, _n_shard)
+            common.convert_img_img(tf_names, sharded_features, sharded_labels, _get_img_img_example)
 
 

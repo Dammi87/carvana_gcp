@@ -3,11 +3,11 @@ import os
 def get_all_files(directory, skipext=None):
     """Returns the absolute path to all files in the directory."""
     file_list = []
-    for file in os.listdir(directory):
-        if skipext in file:
+    for _file in os.listdir(directory):
+        if skipext and skipext in file:
             continue
-
-        file_list.append(os.path.join(directory, file))
+        full_path = os.path.join(directory, _file)
+        file_list.append(full_path)
 
     return file_list
 
