@@ -2,6 +2,7 @@ import tensorflow as tf
 import src.tfrecord.common as common
 from src.lib import fileops, imgops, listops
 import os
+import math.ceil as ceil
 
 def _get_img_img_example(self, feature_path, label_path):
     """Create the feature/label pair tf example"""
@@ -40,14 +41,27 @@ class ImgImgParser():
 
         # Get the data split
         split = fileops.split_lists([feature_path, label_path], *self._split)
+        split_names = ['train', 'val', 'test']
 
+        # Try to split up the "shards" between the dataset splits
+        test_shards = ceil(shards * self._split[2])
+        val_shards = ceil(shards * self._split[1])
+        train_shards = ceil(shards * self._split[0])
+        n_shards = [train_shards, val_shards, test_shards]
+
+        # Wrap shard function for readability
         def shard(the_list):
             return listops.chunks(the_list, shards)
 
+        # Create the tfrecords names
+
         # Loop through
-        for _type, (ftr, lbl) in zip(['train', 'val', 'test'], split):
-            for i, (shard_ftr, shard_lbl) in enumerate(zip(shard(ftr), shard(lbl))):
-                tf_record_name = os.path.join(output_path, '%s_shard_%d.tfrecords' % (_type, i))
-                common.convert_img_img(tf_record_name, shard_ftr, shard_lbl, _get_img_img_example)
+        for _name, (feature_paths, label_paths), _n_shard in zip(split_names, split, n_shards):
+
+            # Create the tfrecord name for each shard
+            tf_names = [os.path.join(output_path, '%s_shard_%d.tfrecords' % (_name, i)) for i in range(_n_shard)]:
+
+            for shard_ftr, shard_lbl in zip(shard(feature_paths), shard(label_paths)):
+                common.convert_img_img(tf_names, shard_ftr, shard_lbl, _get_img_img_example)
 
 
