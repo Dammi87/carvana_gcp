@@ -1,6 +1,6 @@
 import tensorflow as tf
 import src.tfrecord.common as common
-import src.lib.fileops as fileops, imgops, listops
+from src.lib import fileops, imgops, listops
 import os
 
 def _get_img_img_example(self, feature_path, label_path):
