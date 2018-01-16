@@ -1,7 +1,7 @@
 import tensorflow as tf
 import src.tfrecord.common as common
 import src.lib.fileops as fileops, imgops, listops
-
+import os
 
 def _get_img_img_example(self, feature_path, label_path):
     """Create the feature/label pair tf example"""
@@ -9,14 +9,14 @@ def _get_img_img_example(self, feature_path, label_path):
     ftr = imgops.load_image(i_ftr)
     lbl = imgops.load_image(i_lbl)
     feature = {
-        'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring()))
+        'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring())),
         'feature/height': common._int64_feature(ftr.shape[0]),
         'feature/width': common._int64_feature(ftr.shape[1]),
         'feature/channels': common._int64_feature(ftr.shape[2]),
-        'label/img': common._bytes_feature(tf.compat.as_bytes(lbl.tostring()))
+        'label/img': common._bytes_feature(tf.compat.as_bytes(lbl.tostring())),
         'label/height': common._int64_feature(lbl.shape[0]),
         'label/width': common._int64_feature(lbl.shape[1]),
-        'label/channels': common._int64_feature(lbl.shape[2]),
+        'label/channels': common._int64_feature(lbl.shape[2])
         }
     
     return
@@ -32,6 +32,9 @@ class ImgImgParser():
 
     def create_records(self, output_path, shards=1):
         """Create n_shards tfrecords at output_path."""
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+
         feature_path = self._get_image_paths(self._feature_folder)
         label_path = self._get_image_paths(self._label_folder)
 
