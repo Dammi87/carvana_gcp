@@ -1,19 +1,18 @@
 import tensorflow as tf
 from importlib import import_module
 
-from tensorflow.contrib.learn import ModeKeys
+from tensorflow.python.estimator.model_fn import ModeKeys as Modes
 from tensorflow.contrib.learn import learn_runner
 
 
 class MyNetwork():
     def __init__(self, params, arch_type='simple'):
-        BasicNetwork.__init__(self, params)
         self._graph = tf.Graph()
 
         # Import the selected arch
-        module = importlib.import_module('src.arch.%s' % arch_type)
+        module = import_module('src.arch.%s' % arch_type)
         arch = getattr(module, 'model')
-
+        self._params = params
         self._arch = arch
 
     def get_architecture(self, features, mode):
@@ -37,11 +36,10 @@ class MyNetwork():
         return self._arch(features, mode)
 
     def get_loss(self, logits, labels):
-
-        return tf.losses.sparse_softmax_cross_entropy(
-                labels=tf.cast(labels, tf.int32),
-                logits=logits,
-                name='loss_op')
+        with tf.name_scope('loss_op'):
+            return tf.losses.sparse_softmax_cross_entropy(
+                    labels=tf.cast(labels, tf.int32),
+                    logits=logits)
 
     def get_train_op(self, loss, params, global_step):
         """Get the training Op.
@@ -83,13 +81,6 @@ class MyNetwork():
             Returns:
                 (EstimatorSpec): Model to be run by Estimator.
         """
-        is_training = mode == ModeKeys.TRAIN
-
-        # If we are serving, we need to receive dicts
-        is_serving = mode == ModeKeys.INFER
-        if is_serving:
-            features = features["feature"]
-
         # Define model's architecture
         logits = self.get_architecture(features, mode)
 
@@ -100,7 +91,7 @@ class MyNetwork():
       
         # When training and evaluating, we want to calculate loss for summary and backprop
         if mode in (Modes.TRAIN, Modes.EVAL):
-            global_step = tf.contrib.framework.get_or_create_global_step()
+            global_step = tf.train.get_or_create_global_step()
             loss = self.get_loss(logits, labels)
             tf.summary.scalar('OptimizeLoss', loss)
       

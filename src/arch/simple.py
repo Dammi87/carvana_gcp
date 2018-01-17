@@ -1,9 +1,10 @@
 import tensorflow as tf
+from tensorflow.python.estimator.model_fn import ModeKeys as Modes
 import src.lib.tfops as tfops
 
 def model(features, mode, scope='simple_network'):
     with tf.variable_scope(scope):
-        is_training = mode == ModeKeys.TRAIN
+        is_training = mode == Modes.TRAIN
 
         # Input Layer
         net = [features]
@@ -21,10 +22,11 @@ def model(features, mode, scope='simple_network'):
         tensor_shape = net[-1].get_shape().as_list()
         units = tensor_shape[1] * tensor_shape[2] * tensor_shape[3] 
         net.append(tf.layers.dense(inputs=net[-1], units=units))
+        
 
         # Dropout
-        net.append(tf.layers.dropout(inputs=net[-1], rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN))
-
+        net.append(tf.layers.dropout(inputs=net[-1], rate=0.4, training=is_training))
+        
         # Deconv
         net.append(tfops.deconv2d_resize(
           inputs=net[-1],

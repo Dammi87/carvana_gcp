@@ -11,11 +11,13 @@ def get_all_files(directory, skipext=None):
 
     return sorted(file_list)
 
-def get_all_files_containing(directory, containing):
+def get_all_files_containing(directory, containing, ext=None):
     """Returns the absolute path to all files in that have containgin in filename"""
     file_list = []
     for _file in os.listdir(directory):
         if containing in _file:
+            if not ext and ext != _file.split('.')[-1]:
+                continue
             full_path = os.path.join(directory, _file)
             file_list.append(full_path)
 

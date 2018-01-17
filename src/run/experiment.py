@@ -1,35 +1,36 @@
 import tensorflow as tf
-
+from tensorflow.contrib.learn import learn_runner
+from src.run.network import MyNetwork
+from src.lib.fileops import get_all_files_containing
+from src.tfrecord.parsers import _img_img_read_and_decode
 tf.logging.set_verbosity(tf.logging.DEBUG)
 
 # Set default flags for the output directories
 FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string(
-    flag_name='model_dir', default_value='./models/chpkt/mnist',
-    docstring='Output directory for model and training stats.')
+    flag_name='model_dir', default_value='./models/chpkt/',
+    docstring='Output directory for model and training stats, will be under subfolder of model_type.')
+
+tf.app.flags.DEFINE_string(
+    flag_name='tfrecord_dir', default_value='/content/tfrecords',
+    docstring='Directory where all the tfrecord files are stored')
+
+tf.app.flags.DEFINE_string(
+    flag_name='model_type', default_value='simple',
+    docstring='Define the model type to use.')
 
 
-class MyExperiment():
-    def __init__(self, train_tf_files, eval_tf_files, tf_parser):
-
-        # Define model parameters
-        params = tf.contrib.training.HParams(
-            learning_rate=0.002,
-            n_classes=10,
-            train_steps=500000,
-            min_eval_frequency=1000
-        )
-
-        MyNetwork.__init__(self, params)
+class MyExperiment(MyNetwork):
+    def __init__(self, tf_folder, model_type, params):
+        MyNetwork.__init__(self, params, model_type)
 
         # Get the tf records
-        self._train_tf = train_tf_files
-        self._eval_tf = eval_tf_files
+        self._train_tf = get_all_files_containing(tf_folder, 'train', 'tfrecords')
+        self._eval_tf = get_all_files_containing(tf_folder, 'val', 'tfrecords')
 
-        self._tf_parser = tf_parser
-        self._dataset_params = {"batch_size": 600, 
+        self._dataset_params = {"batch_size": 6, 
                                 "buffer_size": 6, 
-                                "num_threads": 2, 
+                                "num_parallel_calls": 2, 
                                 "output_buffer_size": 2}
 
 
@@ -38,14 +39,15 @@ class MyExperiment():
         params = {**self._dataset_params}
 
         # Add
-        params["tf_records"] = [self._train_tf]
+        params["tf_records"] = self._train_tf
 
         def get_next():
             # Create a filename queue for the TFRecords
-            dataset = tf.contrib.data.TFRecordDataset(params["tf_records"])
+            dataset = tf.data.TFRecordDataset(params["tf_records"])
 
             # Parse the record into tensors.
-            dataset = dataset.map(self._tf_parser, num_threads=params["num_threads"], output_buffer_size=params["output_buffer_size"]) 
+            dataset = dataset.map(_img_img_read_and_decode, num_parallel_calls=params["num_parallel_calls"]) 
+            dataset = dataset.prefetch(params["output_buffer_size"])
             dataset = dataset.shuffle(params["buffer_size"])
             dataset = dataset.repeat()  # Repeat the input indefinitely.
             dataset = dataset.batch(params["batch_size"])
@@ -61,14 +63,15 @@ class MyExperiment():
         params = {**self._dataset_params}
 
         # Add
-        params["tf_records"] = [self._test_tf]
+        params["tf_records"] = self._eval_tf
 
         def get_next():
             # Create a filename queue for the TFRecords
-            dataset = tf.contrib.data.TFRecordDataset(params["tf_records"])
+            dataset = tf.data.TFRecordDataset(params["tf_records"])
 
             # Parse the record into tensors.
-            dataset = dataset.map(self._tf_parser, num_threads=params["num_threads"], output_buffer_size=params["output_buffer_size"]) 
+            dataset = dataset.map(_img_img_read_and_decode, num_parallel_calls=params["num_parallel_calls"]) 
+            dataset = dataset.prefetch(params["output_buffer_size"])
             dataset = dataset.shuffle(params["buffer_size"])
             # dataset = dataset.repeat()  # Repeat the input indefinitely.
             dataset = dataset.batch(params["batch_size"])
@@ -80,14 +83,12 @@ class MyExperiment():
         return get_next
 
 
-    def run_experiment(self, argv=None):
+    def run_experiment(self, model_dir):
         """Runs the training experiment."""
-
-
         # Set the run_config and the directory to save the model and stats
         #with self._graph.as_default():
         run_config = tf.contrib.learn.RunConfig()
-        run_config = run_config.replace(model_dir=FLAGS.model_dir)
+        run_config = run_config.replace(model_dir=model_dir)
         run_config = run_config.replace(save_summary_steps=500)
 
         learn_runner.run(
@@ -107,7 +108,6 @@ class MyExperiment():
                 (Experiment) Experiment for training the mnist model.
         """
 
-        #with self._graph.as_default():
         # You can change a subset of the run_config properties as
         run_config = run_config.replace(save_checkpoints_steps=params.min_eval_frequency)
 
@@ -133,8 +133,18 @@ class MyExperiment():
         return experiment
 
 def main(_):
-    Exp = MyExperiment()
-    Exp.run_experiment()
+    
+    # Define model parameters
+    params = tf.contrib.training.HParams(
+        learning_rate=0.002,
+        n_classes=10,
+        train_steps=15000,
+        min_eval_frequency=100
+    )
+
+ 
+    Exp = MyExperiment(FLAGS.tfrecord_dir, FLAGS.model_type, params=params)
+    Exp.run_experiment(FLAGS.model_dir)
 
 if __name__ == "__main__":
     tf.app.run()

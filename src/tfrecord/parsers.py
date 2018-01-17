@@ -54,10 +54,10 @@ def _img_img_read_and_decode(record):
     # read, decode and normalize image
     feature_img = tf.decode_raw(parsed['feature/img'], tf.uint8)
     feature_img = tf.cast(feature_img, tf.float32) * (1. / 255) - 0.5
-    feature_img = tf.reshape(feature_img, ftr_shape)
+    feature_img = tf.reshape(feature_img, [320, 479, 3])
     label_img = tf.decode_raw(parsed['label/img'], tf.uint8)
     label_img = tf.cast(label_img, tf.int32)
-    label_img = tf.reshape(label_img, lbl_shape)
+    label_img = tf.reshape(label_img, [320, 479, 1])
 
     return feature_img, label_img
 
