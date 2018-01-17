@@ -1,13 +1,14 @@
 import tensorflow as tf
+import random
 import src.tfrecord.common as common
 from src.lib import fileops, imgops, listops
 import os
 from math import ceil
 
-def _get_img_img_example(feature_path, label_path, resize=None):
+def _get_img_img_example(feature_path, label_path, size=None, scale=None):
     """Create the feature/label pair tf example"""
-    ftr = imgops.load_image(feature_path, resize)
-    lbl = imgops.load_image(label_path,resize)
+    ftr, ftr_shape = imgops.load_image(feature_path, size=size, scale=scale)
+    lbl, lbl_shape = imgops.load_image(label_path, size=size, scale=scale)
     feature = {
         'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring())),
         'feature/height': common._int64_feature(ftr_shape[0]),
@@ -61,12 +62,14 @@ def _img_img_read_and_decode(record):
     return feature_img, label_img
 
 class ImgImgParser():
-    def __init__(self, feature_folder, label_folder, split=[0.8, 0.1, 0.1], img_resize=None):
+    def __init__(self, output_path, feature_folder, label_folder, split=[0.8, 0.1, 0.1], img_size=None, img_scale=None, randomize=True):
         self._feature_folder = feature_folder
         self._label_folder = label_folder
         self._split = split
         self._output_path = output_path
-        self._img_resize = img_resize
+        self._img_size = img_size
+        self._img_scale = img_scale
+        self._randomize = randomize
 
     def _get_image_paths(self, path):
         return fileops.get_all_files(path)
@@ -78,6 +81,11 @@ class ImgImgParser():
 
         feature_path = self._get_image_paths(self._feature_folder)
         label_path = self._get_image_paths(self._label_folder)
+        
+        if self._randomize:
+            c = list(zip(feature_path, label_path))
+            random.shuffle(c)
+            feature_path, label_path = zip(*c)
 
         # Get the data split
         split = fileops.split_lists([feature_path, label_path], *self._split)
@@ -91,7 +99,7 @@ class ImgImgParser():
 
         # Wrap the example generator
         def example_gen(feature, label):
-            return _get_img_img_example(feature, label, size=None)
+            return _get_img_img_example(feature, label, size=self._img_size, scale=self._img_scale)
 
         # Loop through
         for _name, (feature_paths, label_paths), _n_shard in zip(split_names, split, n_shards):
@@ -99,7 +107,7 @@ class ImgImgParser():
             tf_names = [os.path.join(self._output_path, '%s_shard_%d.tfrecords' % (_name, i)) for i in range(_n_shard)]
             sharded_features = listops.chunks(feature_paths, _n_shard)
             sharded_labels = listops.chunks(label_paths, _n_shard)
-            common.convert_img_img(tf_names, sharded_features, sharded_labels, example_gen, resize=self._img_resize)
+            common.convert_img_img(tf_names, sharded_features, sharded_labels, example_gen)
 
     def get_input_feeder(self, data_type, batch_size, buffer_size, epochs=None):
         assert data_type in ['train', 'val', 'test']

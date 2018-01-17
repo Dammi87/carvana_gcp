@@ -9,7 +9,7 @@ def _bytes_feature(value):
     """Return value as a byte feature."""
     return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
-def convert_img_img(tfrecord_path, ftr_chunks, lbl_chunks, get_tfexample, resize=self._img_resize):
+def convert_img_img(tfrecord_path, ftr_chunks, lbl_chunks, get_tfexample):
     """Convert the lists given into tfrecords.
 
     Parameters
