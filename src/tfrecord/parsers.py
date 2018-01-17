@@ -4,10 +4,10 @@ from src.lib import fileops, imgops, listops
 import os
 from math import ceil
 
-def _get_img_img_example(feature_path, label_path):
+def _get_img_img_example(feature_path, label_path, resize=None):
     """Create the feature/label pair tf example"""
-    ftr = imgops.load_image(feature_path)
-    lbl = imgops.load_image(label_path)
+    ftr = imgops.load_image(feature_path, resize)
+    lbl = imgops.load_image(label_path,resize)
     feature = {
         'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring())),
         'feature/height': common._int64_feature(ftr.shape[0]),
@@ -61,11 +61,12 @@ def _img_img_read_and_decode(record):
     return feature_img, label_img
 
 class ImgImgParser():
-    def __init__(self, feature_folder, label_folder, split=[0.8, 0.1, 0.1]):
+    def __init__(self, feature_folder, label_folder, split=[0.8, 0.1, 0.1], img_resize=None):
         self._feature_folder = feature_folder
         self._label_folder = label_folder
         self._split = split
         self._output_path = output_path
+        self._img_resize = img_resize
 
     def _get_image_paths(self, path):
         return fileops.get_all_files(path)
@@ -88,13 +89,17 @@ class ImgImgParser():
         train_shards = ceil(shards * self._split[0])
         n_shards = [train_shards, val_shards, test_shards]
 
+        # Wrap the example generator
+        def example_gen(feature, label):
+            return _get_img_img_example(feature, label, size=None)
+
         # Loop through
         for _name, (feature_paths, label_paths), _n_shard in zip(split_names, split, n_shards):
             # Create the tfrecord name for each shard
             tf_names = [os.path.join(self._output_path, '%s_shard_%d.tfrecords' % (_name, i)) for i in range(_n_shard)]
             sharded_features = listops.chunks(feature_paths, _n_shard)
             sharded_labels = listops.chunks(label_paths, _n_shard)
-            common.convert_img_img(tf_names, sharded_features, sharded_labels, _get_img_img_example)
+            common.convert_img_img(tf_names, sharded_features, sharded_labels, example_gen, resize=self._img_resize)
 
     def get_input_feeder(self, data_type, batch_size, buffer_size, epochs=None):
         assert data_type in ['train', 'val', 'test']
