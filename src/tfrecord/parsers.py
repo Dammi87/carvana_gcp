@@ -10,13 +10,13 @@ def _get_img_img_example(feature_path, label_path, resize=None):
     lbl = imgops.load_image(label_path,resize)
     feature = {
         'feature/img': common._bytes_feature(tf.compat.as_bytes(ftr.tostring())),
-        'feature/height': common._int64_feature(ftr.shape[0]),
-        'feature/width': common._int64_feature(ftr.shape[1]),
-        'feature/channels': common._int64_feature(ftr.shape[2]),
+        'feature/height': common._int64_feature(ftr_shape[0]),
+        'feature/width': common._int64_feature(ftr_shape[1]),
+        'feature/channels': common._int64_feature(ftr_shape[2]),
         'label/img': common._bytes_feature(tf.compat.as_bytes(lbl.tostring())),
-        'label/height': common._int64_feature(lbl.shape[0]),
-        'label/width': common._int64_feature(lbl.shape[1]),
-        'label/channels': common._int64_feature(lbl.shape[2])
+        'label/height': common._int64_feature(lbl_shape[0]),
+        'label/width': common._int64_feature(lbl_shape[1]),
+        'label/channels': common._int64_feature(lbl_shape[2])
         }
     
     return tf.train.Example(features=tf.train.Features(feature=feature))
@@ -36,15 +36,15 @@ def _img_img_read_and_decode(record):
         'label/channels': tf.FixedLenFeature([], tf.int64)
         }
 
-    parsed = tf.parse_single_example(record, features)
+    parsed = tf.parse_single_example(record, feature)
 
     # Get the sizes
     ftr_height = tf.cast(parsed['feature/height'], tf.int32)
     ftr_width = tf.cast(parsed['feature/width'], tf.int32)
-    ftr_depth = tf.cast(parsed['feature/channels'], tf.int32)
+    ftr_channel = tf.cast(parsed['feature/channels'], tf.int32)
     lbl_height = tf.cast(parsed['label/height'], tf.int32)
     lbl_width = tf.cast(parsed['label/width'], tf.int32)
-    lbl_depth = tf.cast(parsed['label/channels'], tf.int32)
+    lbl_channel = tf.cast(parsed['label/channels'], tf.int32)
 
     # shape of image and annotation
     ftr_shape = tf.stack([ftr_height, ftr_width, ftr_channel])
@@ -54,8 +54,8 @@ def _img_img_read_and_decode(record):
     feature_img = tf.decode_raw(parsed['feature/img'], tf.uint8)
     feature_img = tf.cast(feature_img, tf.float32) * (1. / 255) - 0.5
     feature_img = tf.reshape(feature_img, ftr_shape)
-    label_img = tf.decode_raw(parsed['feature/img'], tf.uint8)
-    label_img = tf.cast(label_img, tf.float32) * (1. / 255) - 0.5
+    label_img = tf.decode_raw(parsed['label/img'], tf.uint8)
+    label_img = tf.cast(label_img, tf.int32)
     label_img = tf.reshape(label_img, lbl_shape)
 
     return feature_img, label_img
