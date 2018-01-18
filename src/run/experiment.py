@@ -28,11 +28,10 @@ class MyExperiment(MyNetwork):
         self._train_tf = get_all_files_containing(tf_folder, 'train', 'tfrecords')
         self._eval_tf = get_all_files_containing(tf_folder, 'val', 'tfrecords')
 
-        self._dataset_params = {"batch_size": 6, 
-                                "buffer_size": 6, 
-                                "num_parallel_calls": 2, 
+        self._dataset_params = {"batch_size": 6,
+                                "buffer_size": 6,
+                                "num_parallel_calls": 2,
                                 "output_buffer_size": 2}
-
 
     def get_train_inputs(self):
         # Copy parameters

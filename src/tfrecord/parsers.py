@@ -132,3 +132,14 @@ class ImgImgParser():
             return iterator.get_next()
 
         return feeder
+
+if __name__ == "__main__":
+    img_parser = ImgImgParser(
+        output_path="/home/adamf/data/carvana/tfrecords",
+        feature_folder="/home/adamf/data/carvana/train_hq",
+        label_folder="/home/adamf/data/carvana/train_masks",
+        split=[0.8, 0.1, 0.1],
+        img_size=None,
+        img_scale=0.3,
+        randomize=True)
+    img_parser.create_records(10)

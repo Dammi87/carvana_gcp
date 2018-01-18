@@ -1,0 +1,1281 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"trani",
+				"trainer"
+			],
+			[
+				"model_",
+				"model_type"
+			],
+			[
+				"inp",
+				"input_type"
+			],
+			[
+				"get",
+				"get_all_files_containing"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"batch",
+				"batch_size"
+			],
+			[
+				"train",
+				"train_input_fn"
+			],
+			[
+				"arch",
+				"arch_type"
+			],
+			[
+				"bat",
+				"batch_size"
+			],
+			[
+				"tf",
+				"tfrecords"
+			],
+			[
+				"test",
+				"test_shards"
+			],
+			[
+				"val",
+				"val_shards"
+			],
+			[
+				"sha",
+				"shards"
+			],
+			[
+				"sa",
+				"shards"
+			],
+			[
+				"shar",
+				"shard_lbl"
+			],
+			[
+				"shard",
+				"shard_ftr"
+			],
+			[
+				"label",
+				"label_images"
+			],
+			[
+				"spli",
+				"split_lists"
+			],
+			[
+				"li",
+				"list_of_lists"
+			],
+			[
+				"val_",
+				"val_ratio"
+			],
+			[
+				"file",
+				"file_list"
+			],
+			[
+				"d",
+				"directory"
+			],
+			[
+				"is",
+				"is_video"
+			],
+			[
+				"count",
+				"count_token"
+			],
+			[
+				"con",
+				"coin_data"
+			],
+			[
+				"coun",
+				"count_token"
+			],
+			[
+				"new",
+				"new_count"
+			],
+			[
+				"new_",
+				"new_time"
+			],
+			[
+				"cum",
+				"cum_sum"
+			],
+			[
+				"co",
+				"counts"
+			],
+			[
+				"c",
+				"counter"
+			],
+			[
+				"sor",
+				"sort_word_count"
+			],
+			[
+				"random",
+				"random_pairs"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"prev",
+				"prev_obj_nr"
+			],
+			[
+				"prev_",
+				"prev_file_id"
+			],
+			[
+				"sp",
+				"split"
+			],
+			[
+				"split",
+				"split_str"
+			],
+			[
+				"boud",
+				"bounded_image"
+			],
+			[
+				"obj",
+				"object_id"
+			],
+			[
+				"vi",
+				"video_max_fps"
+			],
+			[
+				"vide",
+				"video_id\tparam"
+			],
+			[
+				"yt",
+				"youtube_id"
+			],
+			[
+				"vide_",
+				"video_file"
+			],
+			[
+				"vid",
+				"video_file"
+			],
+			[
+				"v",
+				"video"
+			],
+			[
+				"down",
+				"download_youtube"
+			],
+			[
+				"yout",
+				"youtube_id"
+			],
+			[
+				"CSV",
+				"CSV_FILES"
+			],
+			[
+				"CS",
+				"CSV_FILES"
+			],
+			[
+				"fu",
+				"fusion_cfg"
+			],
+			[
+				"_disp",
+				"_dispenser_db_loc"
+			],
+			[
+				"dis",
+				"dispenser_container"
+			],
+			[
+				"igno",
+				"ignore_ids"
+			],
+			[
+				"ids_",
+				"ids_to_save"
+			],
+			[
+				"_pr",
+				"_processed_ids"
+			],
+			[
+				"proce",
+				"processed_ids"
+			],
+			[
+				"up",
+				"update_count\tstatement"
+			],
+			[
+				"act",
+				"activation_time\tstatement"
+			],
+			[
+				"we",
+				"weight\tstatement"
+			],
+			[
+				"ac",
+				"activation_time\tstatement"
+			],
+			[
+				"dev",
+				"devid"
+			],
+			[
+				"_re",
+				"_release_long_scenarios"
+			],
+			[
+				"tags",
+				"tags_to_send"
+			],
+			[
+				"Q",
+				"QuuppaDispensers"
+			],
+			[
+				"disp",
+				"dispenser_name"
+			],
+			[
+				"the_",
+				"the_worker"
+			],
+			[
+				"de",
+				"deleted_count"
+			],
+			[
+				"stat",
+				"status\tstatement"
+			],
+			[
+				"start_",
+				"start_delete_from_db_thread\tfunction"
+			],
+			[
+				"save",
+				"save_container_at\tparam"
+			],
+			[
+				"_di",
+				"_dispenser_in_room"
+			],
+			[
+				"engin",
+				"engine_cfg"
+			],
+			[
+				"corr",
+				"corridor_id"
+			],
+			[
+				"get_di",
+				"get_dispensers_by_room_id"
+			],
+			[
+				"hot",
+				"hotzone_id"
+			],
+			[
+				"ro",
+				"room_id\tparam"
+			],
+			[
+				"_dis",
+				"_dispenser_in_room\tstatement"
+			],
+			[
+				"db_",
+				"db_id_loc\tparam"
+			],
+			[
+				"scenar",
+				"scenario_tags\tstatement"
+			],
+			[
+				"scen",
+				"scenario_tags\tstatement"
+			],
+			[
+				"_get",
+				"_get_mean_pos_from_response"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"sort",
+				"sort_idx"
+			],
+			[
+				"pars",
+				"parse_zone"
+			],
+			[
+				"list",
+				"list_zone_id"
+			],
+			[
+				"list_",
+				"list_zone_name"
+			],
+			[
+				"purge",
+				"purge_all\tfunction"
+			],
+			[
+				"compliance_",
+				"compliance_utils"
+			],
+			[
+				"Res",
+				"ResultDownloader\tclass"
+			],
+			[
+				"time",
+				"time_window"
+			],
+			[
+				"fet",
+				"fetching_result"
+			],
+			[
+				"EC",
+				"ECU_NR"
+			],
+			[
+				"this",
+				"this_output"
+			],
+			[
+				"out",
+				"output"
+			],
+			[
+				"B",
+				"BatchCompliance"
+			],
+			[
+				"sub",
+				"sub_folders"
+			],
+			[
+				"thi",
+				"this_date_folder"
+			],
+			[
+				"output",
+				"output_folder"
+			],
+			[
+				"room",
+				"room_per_moment"
+			],
+			[
+				"ex",
+				"exponent_smooth"
+			],
+			[
+				"senso",
+				"sensor_per_room"
+			],
+			[
+				"UWB",
+				"UWB_Sensors"
+			],
+			[
+				"coo",
+				"coords_per_room"
+			],
+			[
+				"sensor",
+				"sensor_plots"
+			],
+			[
+				"create",
+				"create_circle"
+			],
+			[
+				"UW",
+				"UWB_Sensors"
+			],
+			[
+				"Filt",
+				"Filtering"
+			],
+			[
+				"engn",
+				"engine_cfg"
+			],
+			[
+				"mongo",
+				"mongo_html"
+			],
+			[
+				"mong",
+				"mongo_html"
+			],
+			[
+				"scenario",
+				"scenario_split"
+			],
+			[
+				"inte",
+				"interval"
+			],
+			[
+				"inter",
+				"intervals"
+			],
+			[
+				"scena",
+				"scenarios_left"
+			],
+			[
+				"is_",
+				"is_valid_cond"
+			],
+			[
+				"sce",
+				"scenario_intervals"
+			],
+			[
+				"_",
+				"_scenario_intervals"
+			],
+			[
+				"_sce",
+				"_scenario_intervals"
+			],
+			[
+				"merge",
+				"merge_these"
+			],
+			[
+				"dt_",
+				"dt_these"
+			],
+			[
+				"idx",
+				"idx_valid"
+			],
+			[
+				"moving",
+				"moving_dt"
+			],
+			[
+				"movin",
+				"moving_dt"
+			],
+			[
+				"mov",
+				"moving_dt"
+			],
+			[
+				"ig",
+				"ignore_offline"
+			],
+			[
+				"min",
+				"min_time"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/trainer/input.py",
+			"settings":
+			{
+				"buffer_size": 4805,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Dockerfiles/tf_cpu.Dockerfile",
+			"settings":
+			{
+				"buffer_size": 33,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "from tensorflow/tensorflow:latest"
+			}
+		},
+		{
+			"file": "src/trainer/arch.py",
+			"settings":
+			{
+				"buffer_size": 1847,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "arch.py"
+			}
+		},
+		{
+			"file": "src/run/experiment.py",
+			"settings":
+			{
+				"buffer_size": 5569,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/run/network.py",
+			"settings":
+			{
+				"buffer_size": 5149,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/trainer/task.py",
+			"settings":
+			{
+				"buffer_size": 4053,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test.py",
+			"settings":
+			{
+				"buffer_size": 96,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prepare_data.ipynb",
+			"settings":
+			{
+				"buffer_size": 1800248,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "carvana_gcp.sublime-project",
+			"settings":
+			{
+				"buffer_size": 2815,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/trainer/model.py",
+			"settings":
+			{
+				"buffer_size": 3819,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"term",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"pacl",
+				"Install Package Control"
+			],
+			[
+				"glu",
+				"Glue - Launch"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 461.0
+	},
+	"console":
+	{
+		"height": 393.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"nam",
+			"pribuild_systemsbuild_systemsntjson.dumps(projFile)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/adamf/repos/carvana_gcp",
+		"/home/adamf/repos/carvana_gcp/Dockerfiles",
+		"/home/adamf/repos/carvana_gcp/src",
+		"/home/adamf/repos/carvana_gcp/src/lib",
+		"/home/adamf/repos/carvana_gcp/src/trainer"
+	],
+	"file_history":
+	[
+		"/home/adamf/repos/carvana_gcp/src/trainer/input.py",
+		"/home/adamf/repos/carvana_gcp/src/trainer/model.py",
+		"/home/adamf/repos/carvana_gcp/src/trainer/task.py",
+		"/home/adamf/.config/sublime-text-3/Packages/User/AutoDocstring.sublime-settings",
+		"/home/adamf/repos/carvana_gcp/prepare_data.ipynb",
+		"/home/adamf/.config/sublime-text-3/Packages/AutoDocstring/AutoDocstring.sublime-settings",
+		"/home/adamf/.config/sublime-text-3/Packages/AutoDocstring/Default.sublime-keymap",
+		"/home/adamf/.config/sublime-text-3/Packages/AutoPEP8/AutoPep8.sublime-settings",
+		"/home/adamf/repos/carvana_gcp/src/tfrecord/common.py",
+		"/home/adamf/repos/carvana_gcp/src/lib/listops.py",
+		"/home/adamf/repos/carvana_gcp/src/lib/fileops.py",
+		"/home/adamf/repos/carvana_gcp/src/lib/imgops.py",
+		"/home/adamf/repos/carvana_gcp/src/lib/tfops.py",
+		"/home/adamf/repos/carvana_gcp/src/arch/simple.py",
+		"/home/adamf/repos/carvana_gcp/src/arch/__init__.py",
+		"/home/adamf/repos/carvana_gcp/src/run/__init__.py",
+		"/home/adamf/repos/carvana_gcp/src/lib/__init__.py",
+		"/home/adamf/repos/carvana_gcp/src/tfrecord/__init__.py",
+		"/home/adamf/repos/carvana_gcp/src/__init__.py",
+		"/home/adamf/Documents/Berge/Projects/ImageDiff/imagediff.sublime-project",
+		"/home/adamf/Documents/Berge/Projects/ImageDiff/src/input_pipe/download_data.py",
+		"/home/adamf/Documents/Berge/Projects/ImageDiff/Dockerfiles/Server_Tensorflow/Dockerfile",
+		"/home/adamf/Documents/Berge/Projects/ImageDiff/Dockerfiles/Deploy_Tensorflow/Dockerfile",
+		"/home/adamf/Documents/Berge/Projects/ImageDiff/src/input_pipe/parse_dataset.py",
+		"/home/adamf/Documents/Berge/Projects/graph_loaders.sublime-project",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/config.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/cloud/dispenser_cloud.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/common.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/mongo_fetch_new.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/compliance_engine.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/compliance_engine_quuppa.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/quppa/ProcessData.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/cloud/mongo_client.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/map/Json2Room.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/layouts/Sahlgrenska.json",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/gui_util/FileHandler.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/MainGUI.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/SCA.sublime-project",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/source_bash.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_all_engines.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_udp_tags.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_compliance_engine.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/README.md",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/common/printer.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/cloud/purge_azure_collections.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/cloud/IbmCloud.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/quppa/CaptureUDP.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/compliance_utils.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/diagnostic/visualize_quuppa_dispenser_position.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_udp_dispensers.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/layouts/BergeNewOffice.json",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/setup/build_docker.sh",
+		"/usr/local/lib/python3.5/argparse.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/.gitignore",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_both_engines.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/start_udp_engine.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/mongo_fetch.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/scripts/run/cronjob_watch_upd_engine.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/setup_scripts/setup_engine.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/src/parser/data_loader.py",
+		"/home/adamf/Documents/Berge/Projects/fusion/setup_scripts/cronjob_watchdog.sh",
+		"/home/adamf/Documents/Berge/Projects/fusion/Dockerfiles/gui_docker/Dockerfile",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/mongo_client.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/mongo_fetch.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/cosmos_client.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/setup_scripts/setup_engine.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/Dockerfiles/slim_docker/Dockerfile",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/common/utils.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/filter_wrapper_quuppa.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/common.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/diagnostic/visualize_quuppa_dispenser_position.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/compliance_engine_quuppa.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/map/Json2Room.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/compliance_utils.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/SCA.sublime-project",
+		"/home/adamf/Documents/Berge/Projects/compliance/.gitignore",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/scenario_filters.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/DataReader.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/compliance_engine.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/map/Room.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/IbmCloud.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/mongo_fetch_new.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/Payloads.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/ResultDownloader.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/common/stat_util.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/quppa/CaptureUDP_New.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/ProcessCloudData.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/purge_azure_collections.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/filter_util.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/filter_wrapper.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/quppa/ProcessData.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/common/printer.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/ParticleFilter.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/data_loader.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/diagnostic/GetAnchorInfo.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/diagnostic/tag_per_shift.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/quppa/CaptureUDP.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/sensor_models/LOSmodel.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/CloudOp.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/Cloud_Operations.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/SlackBot.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/decoder.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/examplePF.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/map/RoomPlotter.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/gui_util/PlayBack_Quuppa.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/gui_util/FileHandler.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/gui_util/TableSetup.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/tmp_downloads/UWB/2017-05-31/raw_data_error/1496188800_1496275200_log.txt",
+		"/home/adamf/Documents/Berge/Projects/compliance/tmp_downloads/UWB/2017-06-30/raw_data_error/1498780800_1498867200_log.txt",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/KalmanFilter.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/gui_util/PlayBack.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/filters/examplePF.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/common/tag_per_shift.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/diagnostic/Test_parser_and_filter.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/common/vizResults.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/layouts/London.json",
+		"/home/adamf/Documents/Berge/Projects/compliance/diagnostic/smooth_in_area.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb_legacy/DatabaseManager.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/decoder.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/Cloud.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/setup_scripts/start_compliance_engine.sh",
+		"/home/adamf/Documents/Berge/Projects/compliance/setup_scripts/start_old_engine.sh",
+		"/home/adamf/Documents/Berge/Projects/compliance/setup_scripts/data/start_old_engine.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/cloud/RawUWBDownloader.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/uwb/ProcessCloudData.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/setup_scripts/cronjob_watchdog.sh",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/parser/parser_raw.py",
+		"/home/adamf/Documents/Berge/Projects/compliance/src/sensors_info/this_model_is_used_in_uwb.info"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			", ",
+			"num_parallel_calls",
+			"params",
+			"model",
+			"                           ",
+			"predicted_indices",
+			"num_parallel_calls",
+			"epochs",
+			"get_all_files_containing",
+			"epochs",
+			"batch_size",
+			", ",
+			"        "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/trainer/input.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4805,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2538,
+								2538
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Dockerfiles/tf_cpu.Dockerfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"auto_name": "from tensorflow/tensorflow:latest",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/trainer/arch.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1847,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"auto_name": "arch.py",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/run/experiment.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								985,
+								985
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 287.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/run/network.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "src/trainer/task.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4053,
+								4053
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1404.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 96,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35,
+								35
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "prepare_data.ipynb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1800248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "carvana_gcp.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1566,
+								1566
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1134.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "src/trainer/model.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3686,
+								3686
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.331256281407,
+			0.66,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 407.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Tensorflow_CPU",
+	"project": "carvana_gcp.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/repos/fusion/SCA.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -27,7 +27,11 @@ def convert_img_img(tfrecord_path, ftr_chunks, lbl_chunks, get_tfexample):
 
     with tf.Graph().as_default():
         with tf.Session('') as sess:
-            for irecord, features, labels in zip(tfrecord_path, ftr_chunks, lbl_chunks):
+            n_shards = len(tfrecord_path)
+            for i, (irecord, features, labels) in \
+                    enumerate(zip(tfrecord_path, ftr_chunks, lbl_chunks)):
+
+                print("Shard %d/%d" % (i + 1, n_shards))
                 with tf.python_io.TFRecordWriter(irecord) as tfrecord_writer:
                     for iftr, ilbl in zip(features, labels):
                         example = get_tfexample(iftr, ilbl)
